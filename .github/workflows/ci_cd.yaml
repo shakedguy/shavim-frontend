@@ -1,8 +1,5 @@
 name: Build and Deploy
-on:
-  push:
-    branches:
-      - gh-pages
+on: [push]
 permissions:
   contents: write
 jobs:
@@ -18,6 +15,9 @@ jobs:
       - name: Install 🔧
         run: npm i
       - name: Build
+        env:
+          CI: true
+          REACT_APP_API_DOMAIN: ${ {secrets.REACT_APP_API_DOMAIN} }
         run: npm run build
       - name: Test
         run: npm run test
