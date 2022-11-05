@@ -1,0 +1,35 @@
+.fileUploader {
+	border: 2px dashed black;
+	border-radius: 3px;
+	width: 100%;
+	height: 100%;
+	padding: 0.5rem 1rem;
+}
+
+.fileUploaderContainer {
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 4px;
+	background-color: whitesmoke;
+}
+
+.fileUploaderContainer:hover {
+	background-color: rgba(0, 0, 0, 0.04);
+}
+
+.fileUploaderContainerOnDrag {
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 4px;
+	background-color: rgba(116, 198, 157, 0.5);
+}
