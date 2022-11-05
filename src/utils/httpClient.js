@@ -3,8 +3,8 @@ import axios from 'axios';
 const URL_BASE = String(process.env.REACT_APP_API_DOMAIN);
 
 const DEFAULT_HEADERS = {
-	'Content-Type': String(process.env.REACT_APP_BASE_API_HEADERS_CONTENT_TYPE),
-	Accept: String(process.env.REACT_APP_BASE_API_HEADERS_ACCEPT),
+	'Content-Type': 'application/json',
+	Accept: 'application/json',
 };
 
 const httpClient = axios.create({
