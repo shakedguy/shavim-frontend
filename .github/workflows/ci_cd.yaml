@@ -7,7 +7,7 @@ jobs:
     concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
     env:
-      CI: true
+      CI: false
       REACT_APP_API_DOMAIN: ${ {secrets.REACT_APP_API_DOMAIN} }
     steps:
       - name: Checkout 🛎️
@@ -15,9 +15,6 @@ jobs:
       - name: Install 🔧
         run: npm i
       - name: Build
-        env:
-          CI: true
-          REACT_APP_API_DOMAIN: ${ {secrets.REACT_APP_API_DOMAIN} }
         run: npm run build
       - name: Test
         run: npm run test
