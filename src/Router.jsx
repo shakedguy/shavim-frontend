@@ -6,7 +6,6 @@ import Error from './components/errors/Error';
 import App from './App';
 
 const urls = [
-	'/',
 	'/about',
 	'/info/calculator',
 	'/info/child-support',
@@ -31,17 +30,10 @@ const Router = () => {
 
 	return (
 		<Routes>
-			{/* <Route
+			<Route
 				path='/'
 				element={<App />}
-			/> */}
-			{urls.map((url, index) => (
-				<Route
-					key={index}
-					path={`${url}`}
-					element={<App />}
-				/>
-			))}
+			/>
 			{/* <Route
 				path='/:pageName'
 				element={<App />}
@@ -50,7 +42,7 @@ const Router = () => {
 				path='/:pageName/:slug'
 				element={<App />}
 			/> */}
-			{/* {slugs.map((slug, index) => (
+			{slugs.map((slug, index) => (
 				<Route
 					key={index}
 					path={`${slug}`}
@@ -74,12 +66,12 @@ const Router = () => {
 					path={`/shavim-frontend${slug}`}
 					element={<App />}
 				/>
-			))} */}
+			))}
 
-			{/* <Route
+			<Route
 				path='/shavim-frontend/:slug/'
 				element={<App />}
-			/> */}
+			/>
 		</Routes>
 	);
 };
