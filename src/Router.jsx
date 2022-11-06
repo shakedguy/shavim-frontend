@@ -18,7 +18,7 @@ const urls = [
 	'/registration/',
 	'/info/tools/',
 ];
-//guy
+
 const Router = () => {
 	const { slugs, isLoading, isError, error } = usePages();
 
@@ -31,13 +31,20 @@ const Router = () => {
 	return (
 		<Routes>
 			<Route
-				path='/'
+				path='/*'
 				element={<App />}
 			/>
-			{slugs.map((slug, index) => (
+			{/* {slugs.map((slug, index) => (
 				<Route
 					key={index}
 					path={`${slug}`}
+					element={<App />}
+				/>
+			))}
+			{urls.map((url, index) => (
+				<Route
+					key={index}
+					path={`${url}`}
 					element={<App />}
 				/>
 			))}
@@ -51,7 +58,7 @@ const Router = () => {
 					path={`/shavim-frontend${slug}`}
 					element={<App />}
 				/>
-			))}
+			))} */}
 
 			{/* <Route
 				path='/shavim-frontend/:slug/'
