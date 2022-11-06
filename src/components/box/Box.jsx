@@ -11,7 +11,13 @@ const Box = ({ data }) => {
 	const { title, description, style, labels, stacks, items, forms, videos } =
 		data;
 
-	const { fontFamily, fontSize, fontWeight, color } = style;
+	let fontFamily, fontSize, fontWeight, color;
+	if (!!style) {
+		fontFamily = style.fontFamily;
+		fontSize = style.fontSize;
+		fontWeight = style.fontWeight;
+		color = style.color;
+	}
 
 	let descriptionRows = null;
 
