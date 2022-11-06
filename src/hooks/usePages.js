@@ -14,6 +14,7 @@ const fetchAllPages = () => httpClient.get(`/api/pages/`);
 const fetchPathes = () => httpClient.get(`/api/pages/pathes/`);
 
 const fetchPage = (slug) => {
+	slug = String(slug).replace('shavim-frontend/', '');
 	slug = String(slug).endsWith('/') ? slug : `${slug}/`;
 	return httpClient.get(`/api/pages${slug}`);
 };
