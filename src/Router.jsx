@@ -5,6 +5,20 @@ import Spinner from './components/spinner/Spinner';
 import Error from './components/errors/Error';
 import App from './App';
 
+const urls = [
+	'/about/',
+	'/info/calculator/',
+	'/info/child-support/',
+	'/info/consult/',
+	'/404/',
+	'/info/financial-help/',
+	'/home/',
+	'/info/',
+	'/info/insurance/',
+	'/registration/',
+	'/info/tools/',
+];
+//guy
 const Router = () => {
 	const { slugs, isLoading, isError, error } = usePages();
 
@@ -23,7 +37,7 @@ const Router = () => {
 			{slugs.map((slug, index) => (
 				<Route
 					key={index}
-					path={`/${slug}`}
+					path={`${slug}`}
 					element={<App />}
 				/>
 			))}
@@ -38,6 +52,7 @@ const Router = () => {
 					element={<App />}
 				/>
 			))}
+
 			{/* <Route
 				path='/shavim-frontend/:slug/'
 				element={<App />}
