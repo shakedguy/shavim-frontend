@@ -34,6 +34,10 @@ const Router = () => {
 				path='/'
 				element={<App />}
 			/>
+			<Route
+				path='/about'
+				element={<App />}
+			/>
 			{/* <Route
 				path='/:pageName'
 				element={<App />}
