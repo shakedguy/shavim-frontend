@@ -14,8 +14,9 @@ const fetchAllPages = () => httpClient.get(`/api/pages/`);
 const fetchPathes = () => httpClient.get(`/api/pages/pathes/`);
 
 const fetchPage = (slug) => {
-	slug = String(slug).replace('shavim-frontend/', '');
+	slug = slug.replace('shavim-frontend/', '');
 	slug = String(slug).endsWith('/') ? slug : `${slug}/`;
+	console.log('slug', slug);
 	return httpClient.get(`/api/pages${slug}`);
 };
 
@@ -49,7 +50,10 @@ const usePages = () => {
 		refetch: pageRefetch,
 	} = useQuery(
 		['fetch_pages', pathname],
-		() => fetchPage(pathname === '/' ? '/home/' : pathname),
+		() =>
+			fetchPage(
+				pathname === '/shavim-frontend/' ? '/shavim-frontend/home/' : pathname
+			),
 		{
 			enabled: false,
 			onSuccess: (response) => {
@@ -59,8 +63,6 @@ const usePages = () => {
 	);
 
 	useEffect(() => {
-		console.log(pathname);
-
 		pageRefetch();
 	}, [pathname]);
 
