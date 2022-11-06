@@ -119,7 +119,26 @@ const Page = () => {
 			</>
 			<AuthModal />
 
-			{termsModalIsOpen && <Dialog />}
+			{modals &&
+				modals.map((modal, index) => {
+					if (modal.title === 'תקנון' && termsModalIsOpen) {
+						return (
+							<Dialog
+								key={index}
+								isOpen={termsModalIsOpen}
+								onClose={() => dispatch(setTermsModalIsOpen(false))}
+								data={modal}
+							/>
+						);
+					} else {
+						<Dialog
+							key={index}
+							data={modal}
+							isOpen={true}
+							onClose={() => {}}
+						/>;
+					}
+				})}
 		</div>
 	);
 };
