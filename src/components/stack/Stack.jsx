@@ -23,7 +23,7 @@ const Stack = ({ data }) => {
 	const { stackItems, style } = data;
 	const navigate = useNavigate();
 
-	const { flexDirection } = style;
+	const { flexDirection } = { ...style };
 	return (
 		<Box sx={{ width: '100%' }}>
 			<MuiStack

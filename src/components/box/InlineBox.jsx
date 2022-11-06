@@ -8,7 +8,7 @@ import Form from '../form/Form';
 const InlineBox = ({ data }) => {
 	const { title, description, style, stacks, forms, videos } = data;
 
-	const { fontFamily, fontSize, fontWeight, color } = style;
+	const { fontFamily, fontSize, fontWeight, color } = { ...style };
 
 	// console.log(data);
 	return (

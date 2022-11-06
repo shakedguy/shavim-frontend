@@ -19,7 +19,7 @@ const Form = ({ data }) => {
 		choiceFields,
 	} = data;
 
-	const { fontFamily, fontSize, fontWeight, color } = style;
+	const { fontFamily, fontSize, fontWeight, color } = { ...style };
 
 	return (
 		<Box
