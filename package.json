@@ -1,6 +1,6 @@
 {
 	"name": "shavim-frontend",
-	"homepage": "https://shakedguy.github.io/shavim-frontend/",
+	"homepage": "https://shakedguy.github.io/shavim-frontend",
 	"version": "1.0.0",
 	"dependencies": {
 		"@emotion/react": "^11.10.4",
