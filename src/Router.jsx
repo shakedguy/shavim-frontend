@@ -49,13 +49,13 @@ const Router = () => {
 					element={<App />}
 				/>
 			))}
-			{urls.map((url, index) => (
+			{/* {urls.map((url, index) => (
 				<Route
 					key={index}
 					path={`${url}`}
 					element={<App />}
 				/>
-			))}
+			))} */}
 			<Route
 				path='/shavim-frontend'
 				element={<App />}
