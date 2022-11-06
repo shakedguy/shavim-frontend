@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const URL_BASE = String(process.env.REACT_APP_API_DOMAIN);
+const URL_BASE = 'https://shavim-admin-8mb4g.ondigitalocean.app';
+// const URL_BASE = String(process.env.REACT_APP_API_DOMAIN);
 
 const DEFAULT_HEADERS = {
 	'Content-Type': 'application/json',
