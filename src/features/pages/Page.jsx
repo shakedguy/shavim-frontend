@@ -49,7 +49,6 @@ const Page = () => {
 
 	const backgroundImage =
 		style?.backgroundImage || style?.backgroundImageUrl || '';
-	const dialog = searchParams.get('dialog');
 
 	return (
 		<div
@@ -120,7 +119,7 @@ const Page = () => {
 			</>
 			<AuthModal />
 
-			{dialog && <Dialog />}
+			{termsModalIsOpen && <Dialog />}
 		</div>
 	);
 };
