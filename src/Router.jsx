@@ -12,7 +12,7 @@ const Router = () => {
 
 	if (isError) return <Error data={error} />;
 
-	console.log(slugs);
+	// console.log(slugs);
 
 	return (
 		<Routes>
