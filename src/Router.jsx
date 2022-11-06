@@ -31,7 +31,15 @@ const Router = () => {
 	return (
 		<Routes>
 			<Route
-				path='/*'
+				path='/'
+				element={<App />}
+			/>
+			<Route
+				path='/:pageName'
+				element={<App />}
+			/>
+			<Route
+				path='/:pageName/:slug'
 				element={<App />}
 			/>
 			{/* {slugs.map((slug, index) => (
