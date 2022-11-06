@@ -26,7 +26,7 @@ const Router = () => {
 				/>
 			))}
 			<Route
-				path='/shavim-frontend/:slug'
+				path='/shavim-frontend/:slug/'
 				element={<App />}
 			/>
 		</Routes>
