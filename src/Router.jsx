@@ -17,20 +17,31 @@ const Router = () => {
 	return (
 		<Routes>
 			<Route
+				path='/'
+				element={<App />}
+			/>
+			{slugs.map((slug, index) => (
+				<Route
+					key={index}
+					path={`/${slug}`}
+					element={<App />}
+				/>
+			))}
+			<Route
 				path='/shavim-frontend'
 				element={<App />}
 			/>
 			{slugs.map((slug, index) => (
 				<Route
 					key={index}
-					path={`/shavim-frontend/${slug}/`}
+					path={`/shavim-frontend${slug}`}
 					element={<App />}
 				/>
 			))}
-			<Route
+			{/* <Route
 				path='/shavim-frontend/:slug/'
 				element={<App />}
-			/>
+			/> */}
 		</Routes>
 	);
 };
