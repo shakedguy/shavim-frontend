@@ -22,6 +22,7 @@ const usePages = (type, pageSlug) => {
 		onSuccess: (response) => {
 			setItem(response.data);
 		},
+		cacheTime: 0,
 	});
 
 	return {

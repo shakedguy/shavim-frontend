@@ -60,6 +60,7 @@ const usePages = () => {
 			onSuccess: (response) => {
 				dispatch(setCurrentPage(response.data));
 			},
+			cacheTime: 0,
 		}
 	);
 

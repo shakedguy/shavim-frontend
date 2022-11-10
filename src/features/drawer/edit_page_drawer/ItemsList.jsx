@@ -58,6 +58,7 @@ const ItemsList = () => {
 			onSuccess: (response) => {
 				dispatch(setStyle(response.data));
 			},
+			cacheTime: 0,
 		}
 	);
 	const { refetch: refatchPage } = useQuery(
@@ -68,6 +69,7 @@ const ItemsList = () => {
 			onSuccess: (response) => {
 				// dispatch(setStyle(response.data));
 			},
+			cacheTime: 0,
 		}
 	);
 
