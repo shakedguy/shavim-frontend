@@ -5,6 +5,8 @@ import { Stack as MuiStack } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import styles from './stack.module.css';
 import StackItem from './StackItem';
+import { setOpenDialog } from '../../features/layout/layoutSlice';
+import { useDispatch } from 'react-redux';
 
 const Item = styled(Paper)(({ theme }) => ({
 	backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -22,6 +24,7 @@ const Item = styled(Paper)(({ theme }) => ({
 const Stack = ({ data }) => {
 	const { stackItems, style } = data;
 	const navigate = useNavigate();
+	const dispatch = useDispatch();
 
 	const { flexDirection } = { ...style };
 	return (
@@ -35,6 +38,7 @@ const Stack = ({ data }) => {
 					<StackItem
 						key={index}
 						data={item}
+						onClick={() => dispatch(setOpenDialog(item.text))}
 					/>
 				))}
 			</MuiStack>

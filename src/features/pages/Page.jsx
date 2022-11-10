@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import usePages from '../../hooks/usePages';
-import { setTermsModalIsOpen } from '../layout/layoutSlice';
+import { setTermsModalIsOpen, setOpenDialog } from '../layout/layoutSlice';
 import Theme from '../../utils/theme';
 import Item from '../../components/item/Item';
 import Typography from '@mui/material/Typography';
@@ -36,7 +36,7 @@ const Page = () => {
 	} = useSelector((state) => state.pages.currentPage);
 
 	const { current } = useSelector((state) => state.theme);
-	const { termsModalIsOpen } = useSelector((state) => state.layout);
+	const { termsModalIsOpen, openDialog } = useSelector((state) => state.layout);
 	const dispatch = useDispatch();
 
 	if (isLoading) {
@@ -118,27 +118,21 @@ const Page = () => {
 					))}
 			</>
 			<AuthModal />
+			{termsModalIsOpen && (
+				<Dialog
+					data={modals.find((m) => m.title === 'תקנון')}
+					isOpen={true}
+					onClose={() => dispatch(setTermsModalIsOpen(false))}
+				/>
+			)}
 
-			{modals &&
-				modals.map((modal, index) => {
-					if (modal.title === 'תקנון' && termsModalIsOpen) {
-						return (
-							<Dialog
-								key={index}
-								isOpen={termsModalIsOpen}
-								onClose={() => dispatch(setTermsModalIsOpen(false))}
-								data={modal}
-							/>
-						);
-					} else {
-						<Dialog
-							key={index}
-							data={modal}
-							isOpen={true}
-							onClose={() => {}}
-						/>;
-					}
-				})}
+			{openDialog && modals && (
+				<Dialog
+					data={modals.find((m) => m.title === openDialog)}
+					isOpen={true}
+					onClose={() => dispatch(setOpenDialog(null))}
+				/>
+			)}
 		</div>
 	);
 };

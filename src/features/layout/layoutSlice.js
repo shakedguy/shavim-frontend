@@ -8,6 +8,7 @@ const initialState = {
 	isDarkMode: false,
 	isAuthModalOpen: false,
 	isEditPageDrawerOpen: false,
+	openDialog: null,
 };
 
 const layoutSlice = createSlice({
@@ -48,6 +49,10 @@ const layoutSlice = createSlice({
 		toggleIsEditPageDrawerOpen(state) {
 			state.isEditPageDrawerOpen = !state.isEditPageDrawerOpen;
 		},
+
+		setOpenDialog(state, action) {
+			state.openDialog = action.payload;
+		},
 	},
 });
 
@@ -61,6 +66,7 @@ export const {
 	toggleIsAuthModalOpen,
 	setIsEditPageDrawerOpen,
 	toggleIsEditPageDrawerOpen,
+	setOpenDialog,
 } = layoutSlice.actions;
 
 export default layoutSlice;

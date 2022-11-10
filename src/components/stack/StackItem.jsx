@@ -20,7 +20,7 @@ const Item = styled(Paper)(({ theme }) => ({
 	},
 }));
 
-const StackItem = ({ data }) => {
+const StackItem = ({ data, onClick }) => {
 	const { style, text, modal, href } = data;
 	const [isDialogOpen, setIsDialogOpen] = useState(false);
 	const navigate = useNavigate();
@@ -30,6 +30,9 @@ const StackItem = ({ data }) => {
 			navigate(href);
 		} else {
 			setIsDialogOpen((isDialogOpen) => !isDialogOpen);
+		}
+		if (!!onClick) {
+			onClick();
 		}
 	};
 
