@@ -78,7 +78,7 @@ const Stepper = ({ data }) => {
 	return (
 		<MuiBox
 			sx={{
-				maxWidth: '80%',
+				width: '80%',
 				marginX: 'auto',
 				marginTop: 0,
 				height: '90%',
