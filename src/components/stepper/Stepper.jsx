@@ -74,9 +74,16 @@ const Stepper = ({ data }) => {
 		removeCookie(cookieName);
 	};
 
-	const { steps } = data;
+	const { steps, style } = data;
 	return (
-		<MuiBox sx={{ width: '80%', marginX: 'auto', marginTop: 0, height: '70%' }}>
+		<MuiBox
+			sx={{
+				maxWidth: '80%',
+				marginX: 'auto',
+				marginTop: 0,
+				height: '90%',
+			}}
+		>
 			<Box data={steps[activeStep].box} />
 			<MuiStepper
 				nonLinear
@@ -100,7 +107,7 @@ const Stepper = ({ data }) => {
 			<div>
 				{allStepsCompleted() ? (
 					<>
-						<Typography sx={{ mt: 2, mb: 1 }}>
+						<Typography sx={{ mb: 1 }}>
 							All steps completed - you&apos;re finished
 						</Typography>
 						<MuiBox sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
