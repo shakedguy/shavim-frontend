@@ -118,17 +118,17 @@ const Page = () => {
 					))}
 			</>
 			<AuthModal />
-			{termsModalIsOpen && (
+			{modals && termsModalIsOpen && (
 				<Dialog
-					data={modals.find((m) => m.title === 'תקנון')}
+					data={modals.find((m) => m?.title === 'תקנון')}
 					isOpen={true}
 					onClose={() => dispatch(setTermsModalIsOpen(false))}
 				/>
 			)}
 
-			{openDialog && modals && (
+			{modals && openDialog && (
 				<Dialog
-					data={modals.find((m) => m.title === openDialog)}
+					data={modals.find((m) => m?.title === openDialog)}
 					isOpen={true}
 					onClose={() => dispatch(setOpenDialog(null))}
 				/>
