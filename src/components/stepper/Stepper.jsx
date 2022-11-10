@@ -82,19 +82,20 @@ const Stepper = ({ data }) => {
 				nonLinear
 				activeStep={activeStep}
 			>
-				{steps.map((step, index) => (
-					<Step
-						key={index}
-						completed={completed[index]}
-					>
-						<StepButton
-							color='inherit'
-							onClick={handleStep(index)}
+				{steps &&
+					steps.map((step, index) => (
+						<Step
+							key={index}
+							completed={completed[index]}
 						>
-							<StepLabel>{step.label}</StepLabel>
-						</StepButton>
-					</Step>
-				))}
+							<StepButton
+								color='inherit'
+								onClick={handleStep(index)}
+							>
+								<StepLabel>{step.label}</StepLabel>
+							</StepButton>
+						</Step>
+					))}
 			</MuiStepper>
 			<div>
 				{allStepsCompleted() ? (
