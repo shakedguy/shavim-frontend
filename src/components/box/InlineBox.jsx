@@ -6,11 +6,14 @@ import Video from '../video/Video';
 import Form from '../form/Form';
 
 const InlineBox = ({ data }) => {
+	if (!data) {
+		return null;
+	}
+
 	const { title, description, style, stacks, forms, videos } = data;
 
 	const { fontFamily, fontSize, fontWeight, color } = { ...style };
 
-	// console.log(data);
 	return (
 		<>
 			{title && (

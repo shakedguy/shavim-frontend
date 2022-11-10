@@ -26,7 +26,6 @@ const Transition = forwardRef(function Transition(props, ref) {
 });
 
 const Dialog = ({ data, isOpen, onClose }) => {
-	const { title, description, paragraphs, style } = data;
 	// const [paragraphs, setParagraphs] = useState([]);
 	// const [title, setTitle] = useState('');
 	// const [searchParams] = useSearchParams();
@@ -53,6 +52,10 @@ const Dialog = ({ data, isOpen, onClose }) => {
 	// if (isError) {
 	// 	navigate('/404');
 	// }
+	if (!data) {
+		return null;
+	}
+	const { title, description, paragraphs, style } = data;
 
 	return (
 		<div

@@ -8,6 +8,9 @@ import Form from '../form/Form';
 import Label from '../label/Label';
 
 const Box = ({ data }) => {
+	if (!data) {
+		return null;
+	}
 	const { title, description, style, labels, stacks, items, forms, videos } =
 		data;
 
