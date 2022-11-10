@@ -39,7 +39,10 @@ const Box = ({ data }) => {
 			{title && (
 				<Typography
 					variant='h4'
-					sx={{ fontFamily, fontSize, fontWeight, color, mb: 2 }}
+					fontSize={22}
+					fontFamily={fontFamily}
+					fontWeight={fontWeight}
+					sx={{ color, my: 3 }}
 				>
 					{title}
 				</Typography>
@@ -50,7 +53,10 @@ const Box = ({ data }) => {
 					<Typography
 						key={index}
 						variant='body2'
-						sx={{ fontFamily, color }}
+						fontSize={14}
+						fontFamily={fontFamily}
+						fontWeight={fontWeight}
+						sx={{ color }}
 					>
 						{row}
 					</Typography>
