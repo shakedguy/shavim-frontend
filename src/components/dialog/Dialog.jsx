@@ -73,12 +73,14 @@ const Dialog = ({ data, isOpen, onClose }) => {
 					aria-labelledby='scroll-dialog-title'
 					aria-describedby='scroll-dialog-description'
 				>
-					<DialogTitle
-						style={{ cursor: 'move' }}
-						id='scroll-dialog-title'
-					>
-						{title || 'Title'}
-					</DialogTitle>
+					{title && (
+						<DialogTitle
+							style={{ cursor: 'move' }}
+							id='scroll-dialog-title'
+						>
+							{title || 'Title'}
+						</DialogTitle>
+					)}
 					<DialogContent
 						style={{ minWidth: '30vw', minHeight: '70vw' }}
 						dividers={scroll === 'paper'}
