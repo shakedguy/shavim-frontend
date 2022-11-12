@@ -4,7 +4,7 @@ import { FirebaseProvider } from './context/firebaseContext';
 import ThemeProvider from './context/themeContext';
 
 import './App.css';
-//
+
 const App = () => {
 	return (
 		<ThemeProvider>
