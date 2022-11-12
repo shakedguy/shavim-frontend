@@ -1,7 +1,6 @@
 {
 	"name": "shavim-frontend",
 	"version": "1.0.0",
-	"main": "server.js",
 	"dependencies": {
 		"@emotion/react": "^11.10.4",
 		"@emotion/styled": "^11.10.4",
@@ -37,7 +36,7 @@
 		"web-vitals": "^2.1.4"
 	},
 	"scripts": {
-		"start": "node start",
+		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
